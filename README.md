@@ -2,6 +2,15 @@ Ecademy - E-Learning Platform
 
 Welcome to Ecademy, a modern and user-friendly e-learning platform designed to provide high-quality online education. This project is built using modern web technologies and focuses on interactivity, ease of use, and effective learning.
 
+Features
+
+- User Signup & Login
+- Browse and Enroll in Courses
+- Take Quizzes and View Results
+- Submit Feedback
+- Receive Certificates
+- Secure Payments
+
 Screenshots
 
 <img width="1440" alt="Screenshot 2025-05-05 at 10 39 56 AM" src="https://github.com/user-attachments/assets/c063f691-fda4-4219-a454-e175788adb1e" />
@@ -16,16 +25,6 @@ Screenshots
 
 
 
-Features
-
-- User Signup & Login
-- Browse and Enroll in Courses
-- Take Quizzes and View Results
-- Submit Feedback
-- Receive Certificates
-- Secure Payments
-
----
 
 ## 🛠️ Tech Stack
 
