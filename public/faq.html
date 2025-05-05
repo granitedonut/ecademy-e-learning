@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecademy - FAQ Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+        .active {
+            border-b-2 border-blue-500 text-gray-900;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 1000px; 
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+<nav class="bg-white text-gray-900 shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <a href="main.html" class="flex items-center">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                    <span class="ml-2 text-xl font-bold">Ecademy</span>
+                </a>
+                <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                    <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-gray-900">Courses</a>
+                    <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-600 hover:text-gray-900">FAQ</a>
+                    <a href="feedback.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Feedback</a>
+                    <a href="policy.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <a href="register.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col justify-center items-center gap-x-16 gap-y-5 xl:gap-28 lg:flex-row lg:justify-between max-lg:max-w-2xl mx-auto max-w-full">
+            <div class="w-full lg:w-1/2">
+                <img src="https://pagedone.io/asset/uploads/1696230182.png" alt="FAQ tailwind section" class="w-full rounded-xl"/>
+            </div>
+            <div class="w-full lg:w-1/2">
+                <div class="lg:max-w-xl">
+                    <div class="mb-6 lg:mb-16">
+                        <h6 class="text-lg text-center font-medium text-indigo-600 mb-2 lg:text-left">FAQ's</h6>
+                        <h2 class="text-4xl text-center font-bold text-gray-900 leading-[3.25rem] mb-5 lg:text-left">Looking for answers?</h2>
+                    </div>
+                    <div class="accordion-group" data-accordion="default-accordion">
+                        <div class="accordion pb-8 border-b border-solid border-gray-200 active" id="basic-heading-one-with-arrow-always-open">
+                            <button class="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:font-medium always-open" aria-controls="basic-collapse-one-with-arrow-always-open">
+                                <h5>How to create an account?</h5>
+                                <svg class="text-gray-900 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <div id="basic-collapse-one-with-arrow-always-open" class="accordion-content w-full px-0 overflow-hidden pr-4 active" aria-labelledby="basic-heading-one-with-arrow-always-open" style="max-height: 100px;">
+                                <p class="text-base font-normal text-gray-600">To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
+                            </div>
+                        </div>
+                        <div class="accordion py-8 border-b border-solid border-gray-200" id="basic-heading-two-with-arrow-always-open">
+                            <button class="accordion-toggle group inline-flex items-center justify-between font-normal text-xl leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:font-medium" aria-controls="basic-collapse-two-with-arrow-always-open">
+                                <h5>Have any trust issue?</h5>
+                                <svg class="text-gray-900 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <div id="basic-collapse-two-with-arrow-always-open" class="accordion-content w-full px-0 overflow-hidden pr-4" aria-labelledby="basic-heading-two-with-arrow-always-open">
+                                <p class="text-base text-gray-500 font-normal">Our focus on providing robust and user-friendly content management capabilities ensures that you can manage your content with confidence, and achieve your content marketing goals with ease.</p>
+                            </div>
+                        </div>
+                        <div class="accordion py-8 border-b border-solid border-gray-200" id="basic-heading-three-with-arrow-always-open">
+                            <button class="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600" aria-controls="basic-collapse-three-with-arrow-always-open">
+                                <h5>How can I reset my password?</h5>
+                                <svg class="text-gray-900 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <div id="basic-collapse-three-with-arrow-always-open" class="accordion-content w-full px-0 overflow-hidden pr-4" aria-labelledby="basic-heading-three-with-arrow-always-open">
+                                <p class="text-base text-gray-500 font-normal">Our focus on providing robust and user-friendly content management capabilities ensures that you can manage your content with confidence, and achieve your content marketing goals with ease.</p>
+                            </div>
+                        </div>
+                        <div class="accordion py-8 border-b border-solid border-gray-200" id="basic-heading-four-with-arrow-always-open">
+                            <button class="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600" aria-controls="basic-collapse-four-with-arrow-always-open">
+                                <h5>What is the payment process?</h5>
+                                <svg class="text-gray-900 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <div id="basic-collapse-four-with-arrow-always-open" class="accordion-content w-full px-0 overflow-hidden pr-4" aria-labelledby="basic-heading-four-with-arrow-always-open">
+                                <p class="text-base text-gray-500 font-normal">Our focus on providing robust and user-friendly content management capabilities ensures that you can manage your content with confidence, and achieve your content marketing goals with ease.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="contact-info">
+            <p class="text-sm text-gray-600">Email: <a href="mailto:support@ecademy.com" class="text-blue-600">support@ecademy.com</a></p>
+            <p class="text-sm text-gray-600">Phone: +91 9819384868</p>
+        </div>
+        <div class="social-media mt-4">
+            <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.twitter.com/" class="ml-6 text-gray-600 hover:text-blue-600"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="https://www.linkedin.com/" class="ml-6 text-gray-600 hover:text-blue-600"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+        <div class="mt-4">
+            <p class="text-xs text-gray-500">&copy; 2024 Ecademy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('nav a');
+        const currentURL = window.location.href;
+
+        links.forEach(link => {
+            if (link.href === currentURL) {
+                link.classList.add('active');
+            }
+        });
+
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+            const button = accordion.querySelector('.accordion-toggle');
+            button.addEventListener('click', () => {
+                const content = accordion.querySelector('.accordion-content');
+                content.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

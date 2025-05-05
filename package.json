@@ -1,0 +1,17 @@
+{
+  "name": "ecademy-backend",
+  "version": "1.0.0",
+  "description": "Backend for Ecademy project",
+  "main": "mongo.js",
+  "scripts": {
+    "start": "node mongo.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "cors": "^2.8.5",
+    "path": "^0.12.7"
+  },
+  "author": "",
+  "license": "ISC"
+}

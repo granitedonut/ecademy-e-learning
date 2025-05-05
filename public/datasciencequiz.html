@@ -1,0 +1,199 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecademy - E-Learning Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .active {
+            border-b-2 border-blue-500 text-gray-900;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+ 
+<!-- Navbar -->
+<nav id="navbar" class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <a href="main.html" class="flex items-center">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                    <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+                </a>
+                <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                    <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                    <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+                    <a href="feedback.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Feedback</a>
+                    <a href="policy.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <a href="register.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Body -->
+    <main class="min-h-screen flex flex-col justify-center items-center">
+        <div class="bg-white shadow-lg rounded-lg w-11/12 sm:w-2/3 md:w-1/2 lg:w-1/3 p-6">
+            <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">Data Science</h1>
+
+            <div id="quiz-container">
+                <div id="question-container" class="mb-6">
+                    <h2 id="question" class="text-xl font-semibold mb-4">Question will appear here</h2>
+                    <ul id="options" class="space-y-3">
+                        <!-- Options will be dynamically added here -->
+                    </ul>
+                </div>
+                <button id="next-button" class="mt-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hidden">Next</button>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <h2 class="text-2xl font-bold text-green-600 mb-4">Quiz Completed!</h2>
+                <p id="score" class="text-lg">Your score: 0/0</p>
+                <button id="retry-button" class="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded">Retry</button>
+            </div>
+             <a href="quizlet.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Exit</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 text-gray-600 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <p class="text-sm">&copy; 2024 Ecademy. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+<script>
+const dataScienceQuiz = [
+    {
+        question: "What is the primary goal of Data Science?",
+        options: ["Extract knowledge from data", "Develop web applications", "Design computer networks", "Build mobile apps"],
+        correct: 0
+    },
+    {
+        question: "Which of the following is a common tool used in Data Science?",
+        options: ["Java","R", "C++", "HTML"],
+        correct: 
+    },
+    {
+        question: "What is the process of cleaning and organizing raw data called?",
+        options: ["Data preprocessing", "Data visualization", "Data modeling", "Data mining"],
+        correct: 0
+    },
+    {
+        question: "What does 'EDA' stand for in Data Science?",
+        options: ["Exploratory Data Analysis", "Enhanced Data Algorithms", "Effective Data Architecture", "Efficient Data Analysis"],
+        correct: 0
+    },
+    {
+        question: "Which algorithm is commonly used for classification tasks in machine learning?",
+        options: ["Decision Trees", "Linear Regression", "K-Means", "Principal Component Analysis (PCA)"],
+        correct: 0
+    },
+    {
+        question: "Which Python library is most commonly used for data analysis?",
+        options: ["Pandas", "Flask", "Django", "NumPy"],
+        correct: 0
+    },
+    {
+        question: "What is the purpose of a confusion matrix in classification problems?",
+        options: ["To evaluate the performance of a classifier", "To calculate the model's accuracy", "To visualize data", "To perform data preprocessing"],
+        correct: 0
+    },
+    {
+        question: "What is the process of reducing the dimensionality of data called?",
+        options: ["PCA", "KNN", "Naive Bayes", "Random Forest"],
+        correct: 0
+    },
+    {
+        question: "Which of the following is an unsupervised learning algorithm?",
+        options: ["K-Means Clustering", "Logistic Regression", "Decision Trees", "Naive Bayes"],
+        correct: 0
+    },
+    {
+        question: "Which of the following is NOT a type of machine learning?",
+        options: ["Quantum Learning", "Supervised Learning", "Unsupervised Learning", "Reinforcement Learning"],
+        correct: 0
+    }
+];
+
+const questionContainer = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const optionsElement = document.getElementById('options');
+const nextButton = document.getElementById('next-button');
+
+const resultContainer = document.getElementById('result-container');
+const scoreElement = document.getElementById('score');
+const retryButton = document.getElementById('retry-button');
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function loadQuestion() {
+    const currentQuestion = dataScienceQuiz[currentQuestionIndex]; // Corrected this line
+    questionElement.textContent = currentQuestion.question;
+    optionsElement.innerHTML = '';
+
+    currentQuestion.options.forEach((option, index) => {
+        const li = document.createElement('li');
+        li.className = 'bg-gray-200 p-3 rounded cursor-pointer hover:bg-gray-300';
+        li.textContent = option;
+        li.addEventListener('click', () => selectOption(index));
+        optionsElement.appendChild(li);
+    });
+}
+
+function selectOption(selectedIndex) {
+    const currentQuestion = dataScienceQuiz[currentQuestionIndex]; // Corrected this line
+    if (selectedIndex === currentQuestion.correct) {
+        score++;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < dataScienceQuiz.length) { // Corrected this line
+        loadQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    questionContainer.classList.add('hidden');
+    resultContainer.classList.remove('hidden');
+    scoreElement.textContent = `Your score: ${score}/${dataScienceQuiz.length}`; // Corrected this line
+}
+
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    resultContainer.classList.add('hidden');
+    questionContainer.classList.remove('hidden');
+    loadQuestion();
+}
+
+retryButton.addEventListener('click', restartQuiz);
+
+loadQuestion();
+</script>
+
+</body>
+</html>

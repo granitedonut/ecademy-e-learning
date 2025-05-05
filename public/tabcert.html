@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Completion Certificate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    @keyframes slideIn {
+      0% { transform: translateX(-100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    .animate-slideIn {
+      animation: slideIn 1s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-yellow-200 via-pink-300 to-indigo-400 min-h-screen">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <a href="main.html" class="flex items-center">
+            <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+            <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+          </a>
+          <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+            <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+            <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+            <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+            <a href="feedback.html" id="feedback-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Feedback</a>
+            <a href="policy.html" id="policy-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+          <button id="download-btn" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">
+            Download Certificate
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Certificate Content -->
+  <div class="flex items-center justify-center py-12">
+    <div id="certificate" class="relative w-[900px] h-[600px] bg-white shadow-2xl rounded-lg overflow-hidden animate-slideIn">
+      <!-- Gradient Border -->
+      <div class="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 rounded-lg p-1">
+        <div class="absolute inset-0 bg-white rounded-lg"></div>
+      </div>
+
+      <!-- Decorative Background -->
+      <div class="absolute inset-0 opacity-20 bg-gradient-to-br from-red-200 to-yellow-300"></div>
+
+      <!-- Certificate Content -->
+      <div class="relative z-10 p-10">
+        <div class="text-center">
+          <!-- Certificate Title -->
+          <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500 uppercase animate__animated animate__fadeIn animate__delay-1s">
+            Certificate of Completion
+          </h1>
+          <p class="mt-2 text-xl text-gray-700 font-medium">This is to certify that the learner</p>
+
+          <!-- Course Details -->
+          <p class="mt-6 text-gray-600 text-lg animate__animated animate__fadeIn animate__delay-3s">
+            has successfully completed the course titled
+          </p>
+          <h3 class="text-3xl font-bold text-gray-800 mt-2 animate__animated animate__fadeIn animate__delay-4s">Tableau</h3>
+          <p class="mt-4 text-gray-600 text-lg animate__animated animate__fadeIn animate__delay-5s">in</p>
+          <p class="text-xl font-semibold text-gray-800 animate__animated animate__fadeIn animate__delay-6s">2025</p>
+
+          <!-- Institution or Provider -->
+          <p class="mt-6 text-gray-600 text-lg animate__animated animate__fadeIn animate__delay-7s">
+            Offered by
+          </p>
+          <h3 class="text-xl font-extrabold text-gray-800 mt-2 animate__animated animate__fadeIn animate__delay-8s">Ecademy</h3>
+        </div>
+
+        <!-- Additional Content -->
+        <div class="mt-10 text-center">
+          <p class="text-lg text-gray-600">Thank you for your dedication to learning and excellence.</p>
+          <p class="mt-4 text-gray-800 font-medium">We wish you continued success in your future endeavors!</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-10 border-t-2 border-gray-300 pt-4 text-center text-sm text-gray-500 animate__animated animate__fadeIn animate__delay-9s">
+          Ecademy.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("download-btn").addEventListener("click", function () {
+      const certificateElement = document.getElementById("certificate");
+      html2canvas(certificateElement).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "certificate.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecademy - Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+        .active {
+            border-b-2 border-blue-500 text-gray-900;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <a href="main.html" class="flex items-center">
+                        <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                        <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+                    </a>
+                    <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                        <a href="main.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                        <a href="courses.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                        <a href="faq.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+                        <a href="feedback.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Feedback</a>
+                        <a href="policy.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="register.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Form Section -->
+    <section class="py-12">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <h1 class="text-2xl font-bold mb-4 text-center">Payment Information</h1>
+            <p class="text-center text-gray-600 mb-6">Secure your account and enjoy uninterrupted learning on Ecademy.</p>
+            <form id="payment-form">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="card-number" class="block text-sm font-medium text-gray-700">Card Number</label>
+                        <input type="text" id="card-number" placeholder="0000 0000 0000 0000" class="w-full mt-1 px-4 py-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required pattern="\d{4} \d{4} \d{4} \d{4}">
+                        <span class="text-red-500 text-xs hidden" id="card-number-error">Please enter a valid card number.</span>
+                    </div>
+                    <div>
+                        <label for="expiration-date" class="block text-sm font-medium text-gray-700">Expiration Date</label>
+                        <input type="text" id="expiration-date" placeholder="MM / YY" class="w-full mt-1 px-4 py-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+                        <span class="text-red-500 text-xs hidden" id="expiration-date-error">Please enter a valid expiration date (MM/YY).</span>
+                    </div>
+                    <div>
+                        <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+                        <input type="text" id="cvv" placeholder="000" class="w-full mt-1 px-4 py-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required pattern="\d{3}">
+                        <span class="text-red-500 text-xs hidden" id="cvv-error">Please enter a valid CVV.</span>
+                    </div>
+                    <div>
+                        <label for="card-holder" class="block text-sm font-medium text-gray-700">Card Holder</label>
+                        <input type="text" id="card-holder" placeholder="Full Name" class="w-full mt-1 px-4 py-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        <span class="text-red-500 text-xs hidden" id="card-holder-error">Please enter the cardholder's name.</span>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-lg font-medium text-gray-800">Amount to be Paid: <span class="text-blue-600 font-bold">₹399</span></p>
+                </div>
+                <button type="submit" class="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-500">Pay</button>
+            </form>
+            <div id="payment-message" class="mt-6 text-center text-green-600 hidden">
+                Payment successful! Thank you for choosing Ecademy.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-sm text-gray-600">Contact us: <a href="mailto:support@ecademy.com" class="text-blue-600">support@ecademy.com</a> | +91 9819384868</p>
+            <div class="mt-4">
+                <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600 mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://www.twitter.com/" class="text-gray-600 hover:text-blue-600 mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.linkedin.com/" class="text-gray-600 hover:text-blue-600 mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">&copy; 2024 Ecademy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('payment-form');
+        const cardNumber = document.getElementById('card-number');
+        const expirationDate = document.getElementById('expiration-date');
+        const cvv = document.getElementById('cvv');
+        const cardHolder = document.getElementById('card-holder');
+        const paymentMessage = document.getElementById('payment-message');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Reset error messages
+            document.querySelectorAll('.text-red-500').forEach((error) => {
+                error.classList.add('hidden');
+            });
+
+            let isValid = true;
+
+            // Card Number Validation
+            if (!cardNumber.value.match(/\d{4} \d{4} \d{4} \d{4}/)) {
+                document.getElementById('card-number-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Expiration Date Validation
+            if (!expirationDate.value.match(/(0[1-9]|1[0-2])\/\d{2}/)) {
+                document.getElementById('expiration-date-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // CVV Validation
+            if (!cvv.value.match(/\d{3}/)) {
+                document.getElementById('cvv-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Card Holder Validation
+            if (cardHolder.value.trim() === '') {
+                document.getElementById('card-holder-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (isValid) {
+                paymentMessage.classList.remove('hidden');
+                setTimeout(() => {
+                    window.location.href = 'blockchain.html';
+                }, 2000); // Redirect after 2 seconds
+            }
+        });
+    </script>
+
+</body>
+</html>

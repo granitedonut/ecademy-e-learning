@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .playlist-item {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .playlist-item:hover {
+            background-color: #f1f5f9;
+        }
+        .playlist-item.active {
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav id="navbar" class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <a href="main.html" class="flex items-center">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                    <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+                </a>
+                <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                    <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                    <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+                    <a href="feedback.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Feedback</a>
+                    <a href="policy.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <a href="register.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Video Section -->
+<div class="container mx-auto px-4 py-8">
+    <!-- Global Progress Bar -->
+    <div class="mb-6">
+        <h2 class="text-lg font-bold text-gray-800">Overall Progress</h2>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+            <div id="global-progress-bar" class="bg-blue-600 h-4 rounded-full" style="width: 0%;"></div>
+        </div>
+        <p id="progress-percentage" class="text-sm text-gray-600 mt-1">0% Complete</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row">
+        <div class="main-video flex-1 lg:mr-8 mb-8 lg:mb-0">
+            <div class="video-container relative">
+                <iframe
+                    id="main-video"
+                    width="100%"
+                    height="500"
+                    src="https://www.youtube.com/embed/Ftc9nPKvv3Y"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        <div class="video-list flex-1">
+            <!-- Playlist Items -->
+            <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center" data-video-src="https://www.youtube.com/embed/Ftc9nPKvv3Y">
+                <span class="hidden text-green-500"><i class="fas fa-check-circle"></i></span>
+                <h3 class="ml-4 text-lg text-gray-800">Getting Started With Tableau</h3>
+            </div>
+            <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center" data-video-src="https://www.youtube.com/embed/MLQ9K8Y44OY">
+                <span class="hidden text-green-500"><i class="fas fa-check-circle"></i></span>
+                <h3 class="ml-4 text-lg text-gray-800">Types Of Tableau Products</h3>
+            </div>
+            <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center" data-video-src="https://www.youtube.com/embed/wCQSnu_G5sY">
+                <span class="hidden text-green-500"><i class="fas fa-check-circle"></i></span>
+                <h3 class="ml-4 text-lg text-gray-800">Tableau Working And Usage</h3>
+            </div>
+            <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center" data-video-src="https://www.youtube.com/embed/QZ-CyA6cBsQ">
+                <span class="hidden text-green-500"><i class="fas fa-check-circle"></i></span>
+                <h3 class="ml-4 text-lg text-gray-800">How To Install Tableau</h3>
+            </div>
+            <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center" data-video-src="https://www.youtube.com/embed/4JgtZtzsHJw">
+                <span class="hidden text-green-500"><i class="fas fa-check-circle"></i></span>
+                <h3 class="ml-4 text-lg text-gray-800">Importing Data In Tableau</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Button (Initially Hidden) -->
+    <div id="quiz-button" class="mt-6 text-center hidden">
+    <button 
+        class="px-6 py-3 bg-blue-500 text-white rounded-lg text-lg"
+        onclick="window.location.href='tableau_quiz.html';">
+        Take the Quiz
+    </button>
+</div>
+</div>
+
+<script>
+    const mainVideo = document.getElementById('main-video');
+    const playlistItems = document.querySelectorAll('.playlist-item');
+    const progressBar = document.getElementById('global-progress-bar');
+    const progressPercentage = document.getElementById('progress-percentage');
+    const quizButton = document.getElementById('quiz-button');
+
+    const totalVideos = playlistItems.length;
+    let completedVideos = 0;
+
+    // Update the global progress bar
+    function updateProgress() {
+        const progress = (completedVideos / totalVideos) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressPercentage.textContent = `${Math.round(progress)}% Complete`;
+
+        // Show the quiz button if progress reaches 100%
+        if (progress === 100) {
+            quizButton.classList.remove('hidden');
+        }
+    }
+
+    // Handle video switching and completion tracking
+    playlistItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            playlistItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            const videoSrc = item.getAttribute('data-video-src');
+            mainVideo.src = videoSrc;
+
+            // Mark video as completed and update progress
+            const checkIcon = item.querySelector('span');
+            if (checkIcon.classList.contains('hidden')) {
+                completedVideos++;
+                checkIcon.classList.remove('hidden');
+                updateProgress();
+            }
+        });
+    });
+
+    // Initial progress update
+    updateProgress();
+</script>
+<script src="playlist-progress.js"></script>
+</body>
+</html>

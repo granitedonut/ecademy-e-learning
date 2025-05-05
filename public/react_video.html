@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the playlist layout */
+        .playlist-item {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .playlist-item:hover {
+            background-color: #f1f5f9;
+        }
+        .playlist-item.active {
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav id="navbar" class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <a href="main.html" class="flex items-center">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                    <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+                </a> 
+                <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                    <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                    <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+                    <a href="feedback.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Feedback</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <a href="register.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Video Section -->
+<div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row">
+    <div class="main-video flex-1 lg:mr-8 mb-8 lg:mb-0">
+        <div class="video-container relative">
+            <iframe
+                id="main-video"
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/QFaFIcGhPoM"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+    <div class="video-list flex-1">
+        <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center">
+            <iframe
+                width="100"
+                height="56"
+                src="https://www.youtube.com/embed/QFaFIcGhPoM"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <h3 class="ml-4 text-lg text-gray-800">Introduction</h3>
+        </div>
+        <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center">
+            <iframe
+                width="100"
+                height="56"
+                src="https://www.youtube.com/embed/9hb_0TZ_MVI"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <h3 class="ml-4 text-lg text-gray-800">Hello World</h3>
+        </div>
+        <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center">
+            <iframe
+                width="100"
+                height="56"
+                src="https://www.youtube.com/embed/9VIiLJL0H4Y"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <h3 class="ml-4 text-lg text-gray-800">Folder Structure</h3>
+        </div>
+        <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center">
+            <iframe
+                width="100"
+                height="56"
+                src="https://www.youtube.com/embed/Y2hgEGPzTZY"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <h3 class="ml-4 text-lg text-gray-800">Components</h3>
+        </div>
+        <div class="playlist-item mb-4 p-4 bg-gray-200 rounded-lg flex items-center">
+            <iframe
+                width="100"
+                height="56"
+                src="https://www.youtube.com/embed/Cla1WwguArA"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <h3 class="ml-4 text-lg text-gray-800">Functional Components</h3>
+        </div>
+    </div>
+</div>
+
+<!-- Quiz Button -->
+<div class="text-center py-8">
+    <a href="react_video_quiz.html" class="px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-500">Go to Quiz</a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="contact-info">
+            <p class="text-sm text-gray-600">Email: <a href="mailto:support@ecademy.com" class="text-blue-600">support@ecademy.com</a></p>
+            <p class="text-sm text-gray-600">Phone: +91 9819384868</p>
+        </div>
+        <div class="social-media mt-4">
+            <a href="https://www.facebook.com/" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.twitter.com/" class="ml-6 text-gray-600 hover:text-blue-600"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="https://www.linkedin.com/" class="ml-6 text-gray-600 hover:text-blue-600"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+        <div class="mt-4">
+            <p class="text-xs text-gray-500">&copy; 2024 Ecademy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mainVideo = document.getElementById('main-video');
+    const playlistItems = document.querySelectorAll('.playlist-item');
+
+    playlistItems.forEach(item => {
+        item.addEventListener('click', () => {
+            playlistItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            const iframe = item.querySelector('iframe');
+            mainVideo.src = iframe.src;
+        });
+    });
+</script>
+
+</body>
+</html>
